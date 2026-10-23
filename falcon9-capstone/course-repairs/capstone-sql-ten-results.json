@@ -1,0 +1,268 @@
+[
+  {
+    "title": "Unique launch sites",
+    "query": "SELECT DISTINCT Launch_Site FROM SPACEXTBL ORDER BY Launch_Site",
+    "headers": [
+      "Launch_Site"
+    ],
+    "rows": [
+      [
+        "CCAFS LC-40"
+      ],
+      [
+        "CCAFS SLC-40"
+      ],
+      [
+        "KSC LC-39A"
+      ],
+      [
+        "VAFB SLC-4E"
+      ]
+    ]
+  },
+  {
+    "title": "Five CCA launch records",
+    "query": "SELECT Date, Booster_Version, Launch_Site, PAYLOAD_MASS__KG_ FROM SPACEXTBL WHERE Launch_Site LIKE 'CCA%' LIMIT 5",
+    "headers": [
+      "Date",
+      "Booster_Version",
+      "Launch_Site",
+      "PAYLOAD_MASS__KG_"
+    ],
+    "rows": [
+      [
+        "2010-06-04",
+        "F9 v1.0  B0003",
+        "CCAFS LC-40",
+        0
+      ],
+      [
+        "2010-12-08",
+        "F9 v1.0  B0004",
+        "CCAFS LC-40",
+        0
+      ],
+      [
+        "2012-05-22",
+        "F9 v1.0  B0005",
+        "CCAFS LC-40",
+        525
+      ],
+      [
+        "2012-10-08",
+        "F9 v1.0  B0006",
+        "CCAFS LC-40",
+        500
+      ],
+      [
+        "2013-03-01",
+        "F9 v1.0  B0007",
+        "CCAFS LC-40",
+        677
+      ]
+    ]
+  },
+  {
+    "title": "NASA CRS payload mass",
+    "query": "SELECT SUM(PAYLOAD_MASS__KG_) AS Total_kg FROM SPACEXTBL WHERE Customer='NASA (CRS)'",
+    "headers": [
+      "Total_kg"
+    ],
+    "rows": [
+      [
+        45596
+      ]
+    ]
+  },
+  {
+    "title": "F9 v1.1 average payload",
+    "query": "SELECT AVG(PAYLOAD_MASS__KG_) AS Average_kg FROM SPACEXTBL WHERE Booster_Version LIKE 'F9 v1.1%'",
+    "headers": [
+      "Average_kg"
+    ],
+    "rows": [
+      [
+        2534.667
+      ]
+    ]
+  },
+  {
+    "title": "First successful ground landing",
+    "query": "SELECT MIN(Date) AS First_date FROM SPACEXTBL WHERE Landing_Outcome='Success (ground pad)'",
+    "headers": [
+      "First_date"
+    ],
+    "rows": [
+      [
+        "2015-12-22"
+      ]
+    ]
+  },
+  {
+    "title": "Drone-ship boosters, 4000-6000 kg",
+    "query": "SELECT DISTINCT Booster_Version FROM SPACEXTBL WHERE Landing_Outcome='Success (drone ship)' AND PAYLOAD_MASS__KG_>4000 AND PAYLOAD_MASS__KG_<6000 ORDER BY Booster_Version",
+    "headers": [
+      "Booster_Version"
+    ],
+    "rows": [
+      [
+        "F9 FT  B1021.2"
+      ],
+      [
+        "F9 FT  B1031.2"
+      ],
+      [
+        "F9 FT B1022"
+      ],
+      [
+        "F9 FT B1026"
+      ]
+    ]
+  },
+  {
+    "title": "Mission outcomes",
+    "query": "SELECT TRIM(Mission_Outcome) AS Mission_Outcome, COUNT(*) AS Missions FROM SPACEXTBL GROUP BY TRIM(Mission_Outcome) ORDER BY Missions DESC",
+    "headers": [
+      "Mission_Outcome",
+      "Missions"
+    ],
+    "rows": [
+      [
+        "Success",
+        99
+      ],
+      [
+        "Success (payload status unclear)",
+        1
+      ],
+      [
+        "Failure (in flight)",
+        1
+      ]
+    ]
+  },
+  {
+    "title": "Boosters with maximum payload",
+    "query": "SELECT Booster_Version, PAYLOAD_MASS__KG_ FROM SPACEXTBL WHERE PAYLOAD_MASS__KG_=(SELECT MAX(PAYLOAD_MASS__KG_) FROM SPACEXTBL) ORDER BY Booster_Version",
+    "headers": [
+      "Booster_Version",
+      "PAYLOAD_MASS__KG_"
+    ],
+    "rows": [
+      [
+        "F9 B5 B1048.4",
+        15600
+      ],
+      [
+        "F9 B5 B1048.5",
+        15600
+      ],
+      [
+        "F9 B5 B1049.4",
+        15600
+      ],
+      [
+        "F9 B5 B1049.5",
+        15600
+      ],
+      [
+        "F9 B5 B1049.7 ",
+        15600
+      ],
+      [
+        "F9 B5 B1051.3",
+        15600
+      ],
+      [
+        "F9 B5 B1051.4",
+        15600
+      ],
+      [
+        "F9 B5 B1051.6",
+        15600
+      ],
+      [
+        "F9 B5 B1056.4",
+        15600
+      ],
+      [
+        "F9 B5 B1058.3 ",
+        15600
+      ],
+      [
+        "F9 B5 B1060.2 ",
+        15600
+      ],
+      [
+        "F9 B5 B1060.3",
+        15600
+      ]
+    ]
+  },
+  {
+    "title": "Drone-ship landing failures in 2015",
+    "query": "SELECT substr(Date,6,2) AS Month, Landing_Outcome, Booster_Version, Launch_Site FROM SPACEXTBL WHERE substr(Date,1,4)='2015' AND Landing_Outcome='Failure (drone ship)' ORDER BY Date",
+    "headers": [
+      "Month",
+      "Landing_Outcome",
+      "Booster_Version",
+      "Launch_Site"
+    ],
+    "rows": [
+      [
+        "01",
+        "Failure (drone ship)",
+        "F9 v1.1 B1012",
+        "CCAFS LC-40"
+      ],
+      [
+        "04",
+        "Failure (drone ship)",
+        "F9 v1.1 B1015",
+        "CCAFS LC-40"
+      ]
+    ]
+  },
+  {
+    "title": "Landing outcomes within date interval",
+    "query": "SELECT Landing_Outcome, COUNT(*) AS Outcomes FROM SPACEXTBL WHERE Date BETWEEN '2010-06-04' AND '2017-03-20' GROUP BY Landing_Outcome ORDER BY Outcomes DESC",
+    "headers": [
+      "Landing_Outcome",
+      "Outcomes"
+    ],
+    "rows": [
+      [
+        "No attempt",
+        10
+      ],
+      [
+        "Success (drone ship)",
+        5
+      ],
+      [
+        "Failure (drone ship)",
+        5
+      ],
+      [
+        "Success (ground pad)",
+        3
+      ],
+      [
+        "Controlled (ocean)",
+        3
+      ],
+      [
+        "Uncontrolled (ocean)",
+        2
+      ],
+      [
+        "Failure (parachute)",
+        2
+      ],
+      [
+        "Precluded (drone ship)",
+        1
+      ]
+    ]
+  }
+]
