@@ -1,0 +1,107 @@
+{
+  "launch_sites": 4,
+  "launch_markers": 56,
+  "coastline_distance_km": 0.5797581813109574,
+  "dashboard_callbacks": "All four sites and ALL tested, including payload filtering",
+  "train_shape": [
+    72,
+    80
+  ],
+  "test_shape": [
+    18,
+    80
+  ],
+  "models": {
+    "Logistic Regression": {
+      "cv_accuracy": 0.8076190476190476,
+      "test_accuracy": 0.8333333333333334,
+      "best_parameters": {
+        "logisticregression__C": 1
+      },
+      "confusion_matrix": [
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          12
+        ]
+      ]
+    },
+    "SVM": {
+      "cv_accuracy": 0.8066666666666666,
+      "test_accuracy": 0.7222222222222222,
+      "best_parameters": {
+        "svc__C": 10,
+        "svc__kernel": "rbf"
+      },
+      "confusion_matrix": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          10
+        ]
+      ]
+    },
+    "Decision Tree": {
+      "cv_accuracy": 0.8323809523809524,
+      "test_accuracy": 0.7777777777777778,
+      "best_parameters": {
+        "decisiontreeclassifier__max_depth": 8
+      },
+      "confusion_matrix": [
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          11
+        ]
+      ]
+    },
+    "KNN": {
+      "cv_accuracy": 0.7352380952380952,
+      "test_accuracy": 0.7777777777777778,
+      "best_parameters": {
+        "kneighborsclassifier__n_neighbors": 3
+      },
+      "confusion_matrix": [
+        [
+          2,
+          4
+        ],
+        [
+          0,
+          12
+        ]
+      ]
+    }
+  },
+  "launch_site_summary": {
+    "CCAFS LC-40": {
+      "sum": 7,
+      "count": 26,
+      "mean": 0.2692307692307692
+    },
+    "CCAFS SLC-40": {
+      "sum": 3,
+      "count": 7,
+      "mean": 0.42857142857142855
+    },
+    "KSC LC-39A": {
+      "sum": 10,
+      "count": 13,
+      "mean": 0.7692307692307693
+    },
+    "VAFB SLC-4E": {
+      "sum": 4,
+      "count": 10,
+      "mean": 0.4
+    }
+  }
+}

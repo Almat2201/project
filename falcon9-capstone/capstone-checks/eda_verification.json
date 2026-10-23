@@ -1,0 +1,124 @@
+{
+  "feature_shape": [
+    90,
+    80
+  ],
+  "annual_success": {
+    "2010": 0.0,
+    "2012": 0.0,
+    "2013": 0.0,
+    "2014": 0.3333333333333333,
+    "2015": 0.3333333333333333,
+    "2016": 0.625,
+    "2017": 0.8333333333333334,
+    "2018": 0.6111111111111112,
+    "2019": 0.9,
+    "2020": 0.8421052631578947
+  },
+  "sql_magic_results": {
+    "unique_sites": [
+      [
+        "CCAFS LC-40"
+      ],
+      [
+        "VAFB SLC-4E"
+      ],
+      [
+        "KSC LC-39A"
+      ],
+      [
+        "CCAFS SLC-40"
+      ]
+    ],
+    "sample_cca": [
+      [
+        "2010-06-04",
+        "18:45:00",
+        "F9 v1.0  B0003",
+        "CCAFS LC-40",
+        "Dragon Spacecraft Qualification Unit",
+        0,
+        "LEO",
+        "SpaceX",
+        "Success",
+        "Failure (parachute)"
+      ],
+      [
+        "2010-12-08",
+        "15:43:00",
+        "F9 v1.0  B0004",
+        "CCAFS LC-40",
+        "Dragon demo flight C1, two CubeSats, barrel of Brouere cheese",
+        0,
+        "LEO (ISS)",
+        "NASA (COTS) NRO",
+        "Success",
+        "Failure (parachute)"
+      ],
+      [
+        "2012-05-22",
+        "7:44:00",
+        "F9 v1.0  B0005",
+        "CCAFS LC-40",
+        "Dragon demo flight C2",
+        525,
+        "LEO (ISS)",
+        "NASA (COTS)",
+        "Success",
+        "No attempt"
+      ],
+      [
+        "2012-10-08",
+        "0:35:00",
+        "F9 v1.0  B0006",
+        "CCAFS LC-40",
+        "SpaceX CRS-1",
+        500,
+        "LEO (ISS)",
+        "NASA (CRS)",
+        "Success",
+        "No attempt"
+      ],
+      [
+        "2013-03-01",
+        "15:10:00",
+        "F9 v1.0  B0007",
+        "CCAFS LC-40",
+        "SpaceX CRS-2",
+        677,
+        "LEO (ISS)",
+        "NASA (CRS)",
+        "Success",
+        "No attempt"
+      ]
+    ],
+    "total_payload": [
+      [
+        619967
+      ]
+    ],
+    "minimum_payload": [
+      [
+        0
+      ]
+    ],
+    "mission_counts": [
+      [
+        "CCAFS LC-40",
+        26
+      ],
+      [
+        "CCAFS SLC-40",
+        34
+      ],
+      [
+        "KSC LC-39A",
+        25
+      ],
+      [
+        "VAFB SLC-4E",
+        16
+      ]
+    ]
+  }
+}
