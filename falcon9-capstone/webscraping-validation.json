@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "source_url": "https://en.wikipedia.org/w/index.php?title=List_of_Falcon_9_and_Falcon_Heavy_launches&oldid=1027686922",
+    "retrieved_at_utc": "2026-10-23T06:22:35.855789+00:00",
+    "http_status": 200,
+    "used_cached_revision": false,
+    "html_bytes": 3293319,
+    "html_sha256": "bcaf27b72595f6374e99e18d6dae5ad24d7637e6d7acaa4fdcc4c8040067dc5e"
+  },
+  "validation": {
+    "rows": 121,
+    "columns": 12,
+    "first_launch": "2010-06-04",
+    "last_launch": "2021-06-06",
+    "launch_tables": 9,
+    "missing_payload_mass_kg": 5,
+    "launch_outcomes": {
+      "Success": 120,
+      "Failure (in flight)": 1
+    },
+    "csv_sha256": "4e862b8a2f49ad4a7c04dae963c219217cff046c9eb6bf0abb7f56a8b8866daa",
+    "csv_roundtrip_verified": true
+  }
+}
